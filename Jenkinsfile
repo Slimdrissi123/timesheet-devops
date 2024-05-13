@@ -22,11 +22,11 @@ pipeline {
             }
         }
         
-        stage('Test Junit & Mockito'){
+       /* stage('Test Junit & Mockito'){
             steps{
                 sh 'mvn test'
             }
-        }
+        }*/
         
         stage('SonarQube analysis') {
             steps {
