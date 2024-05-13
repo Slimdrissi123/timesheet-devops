@@ -31,6 +31,13 @@ pipeline {
                 }
             
         }
+        stage('Deploy to nexus'){
+            steps
+                {
+                    echo 'Deploying to nexus server'
+                    sh 'mvn deploy'
+                }
+        }
         
     }
 }
