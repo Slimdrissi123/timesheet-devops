@@ -29,15 +29,15 @@ pipeline {
         }*/
         
         stage('SonarQube analysis') {
-            steps {
+            steps 
                 // Exécution de l'analyse de code avec SonarQube
-                withSonarQubeEnv('SonarQube') {
+                 {
                       sh 'mvn sonar:sonar \
                           -Dsonar.projectKey=timesheet-devops \
                           -Dsonar.host.url=http://192.168.56.2:9000 \
                           -Dsonar.login=110b5a8288a0aee98ec5dcd225b0a3fc3b0f8441'
                 }
-            }
+            
         }
         
     }
