@@ -1,4 +1,6 @@
-MAIN_VERSION = "1.0"
+MAIN_VERSION = "24.3.1"
+
+MVN = maven.initialiseMvn()
 BUILD_VERSION = "$MAIN_VERSION-b${env.BUILD_NUMBER}"
 BUILD_INFO = maven.newBuildInfo()
 pipeline {
