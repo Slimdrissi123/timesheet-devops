@@ -1,3 +1,6 @@
+MAIN_VERSION = "1.0"
+BUILD_VERSION = "$MAIN_VERSION-b${env.BUILD_NUMBER}"
+BUILD_INFO = maven.newBuildInfo()
 pipeline {
     agent any
     stages {
@@ -5,7 +8,7 @@ pipeline {
         
         stage('Clean') {
             steps {
-                sh 'mvn clean install'
+                sh "mvn clean install -Dproduct.build.number=b$env.BUILD_NUMBER".toString()
             }
         }
         
