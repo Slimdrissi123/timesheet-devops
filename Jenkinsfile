@@ -36,6 +36,13 @@ pipeline {
                 sh "mvn versions:commit" 
             }
         }
+        stage('Docker Build') {
+                    steps {
+                        script {
+                            sh 'docker build -t sdrissi/timesheet-devops:${BUILD_VERSION} .'
+                        }
+                    }
+        }
         stage('Deploy to nexus') {
             steps {
                 echo 'Deploying to Nexus server'
